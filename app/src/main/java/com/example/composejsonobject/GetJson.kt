@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
-fun GetJson( innerPadding: PaddingValues) {
+fun GetJson(innerPadding: PaddingValues) {
     val context = LocalContext.current
     val musicList = remember { mutableStateListOf<Music>() }
 

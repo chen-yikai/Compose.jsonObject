@@ -12,6 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -55,12 +56,22 @@ fun CreateJson(innerPadding: PaddingValues) {
 
                 Text("Personal Info", fontWeight = FontWeight.Bold, fontSize = 20.sp)
                 Spacer(modifier = Modifier.height(10.dp))
-                TextField(name, onValueChange = { name = it }, label = { Text("Name") })
+                TextField(
+                    name,
+                    onValueChange = { name = it },
+                    label = { Text("Name") },
+                    modifier = Modifier.fillMaxWidth()
+                )
                 Spacer(modifier = Modifier.height(5.dp))
-                TextField(birthday, onValueChange = { birthday = it }, label = { Text("Birthday") })
+                TextField(
+                    birthday,
+                    onValueChange = { birthday = it },
+                    label = { Text("Birthday (mm/dd)") },
+                    modifier = Modifier.fillMaxWidth()
+                )
                 Spacer(modifier = Modifier.height(20.dp))
 
-                FilledTonalButton(onClick = {
+                OutlinedButton(onClick = {
                     list.add(Pair(name, birthday))
                     name = ""
                     birthday = ""
